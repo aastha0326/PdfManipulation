@@ -168,15 +168,25 @@ public class encKey {
 						
 					
 					}
-				}else if(pdfobj.isStream()) {
-					continue;
-				}
+				}else continue;
 				
 			}
 		}
 		
 		return result;
 	}
+		
+	public void replace(PdfName key, PdfObject value, PdfDictionary pdfDict) {
+		
+		pdfDict.put(key, value);
+		
+	    }
+	
+	public void putAll(PdfDictionary d, PdfDictionary pdfDict) {
+		
+        pdfDict.putAll(d);
+    }
+	
 	
 	public static void main(String[] args)throws IOException, NoSuchAlgorithmException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException, NoSuchPaddingException, java.io.IOException, InvalidAlgorithmParameterException {
 		String userString = "Hello";
